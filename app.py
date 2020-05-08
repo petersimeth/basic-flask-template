@@ -3,6 +3,8 @@
 
 from flask import Flask, render_template
 
+DEVELOPMENT_ENV  = True
+
 app = Flask(__name__)
 
 app_data = {
@@ -10,7 +12,7 @@ app_data = {
     "description":  "A basic Flask app using bootstrap for layout",
     "author":       "Peter Simeth",
     "html_title":   "Peter's Starter Template for a Flask Web App",
-    "project_name": "Project name",
+    "project_name": "Starter Template",
     "keywords":     "flask, webapp, template, basic"
 }
 
@@ -19,25 +21,21 @@ app_data = {
 def index():
     return render_template('index.html', app_data=app_data)
 
-@app.route('/b1')
-def b1():
-    return render_template('b1.html', app_data=app_data)
 
-@app.route('/b2')
-def b2():
-    return render_template('b2.html', app_data=app_data)
-
-@app.route('/b3')
-def b3():
-    return render_template('b3.html', app_data=app_data)
+@app.route('/about')
+def about():
+    return render_template('about.html', app_data=app_data)
 
 
-# ------- PRODUCTION CONFIG -------
-#if __name__ == '__main__':
-#    app.run()
+@app.route('/service')
+def service():
+    return render_template('service.html', app_data=app_data)
 
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html', app_data=app_data)
 
-# ------- DEVELOPMENT CONFIG -------
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=DEVELOPMENT_ENV)

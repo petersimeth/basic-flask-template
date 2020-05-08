@@ -1,5 +1,5 @@
 # basic-flask-template
-A barebone Flask app using Flask and Bootstrap.
+A barebone Flask app using Flask and Bootstrap (v4.4.1).
 
 ## Running Locally
 
